@@ -5,12 +5,13 @@ services:
     working_dir: /code
     ports:
       - 3000:3000
-    environment:
-      - PGUSER=futureproof
+    environment: 
+      - PGUSER=onyourmind
       - PGHOST=db
       - PGPASSWORD=onyourmindpassword
-      - PGDATABASE=postsdb
+      - PGDATABASE=thoughts
       - PGPORT=5432
+      - NODE_ENV=development
     depends_on:
       - db
     volumes:
@@ -22,10 +23,10 @@ services:
     image: postgres:latest
     volumes:
       - "dbdata:/var/lib/postgresql/data"
-      - "./db:/docker-entrypoint-initdb.d/:ro"
-    environment:
-      - POSTGRES_DB=postsdb
-      - POSTGRES_USER=futureproof
+      - "./server/dbthoughts:/docker-entrypoint-initdb.d/:ro"
+    environment: 
+      - POSTGRES_DB=thoughts
+      - POSTGRES_USER=onyourmind
       - POSTGRES_PASSWORD=onyourmindpassword
 volumes:
   dbdata:
