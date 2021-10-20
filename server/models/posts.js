@@ -15,7 +15,6 @@ class Post {
             try {
                 const postsData = await db.query(`SELECT * FROM thoughts;`)
                 const posts = postsData.rows.map(p => new Post(p))
-                console.log(posts)
                 resolve(posts);
             } catch (err) {
                 reject("Sorry No Posts Found")
