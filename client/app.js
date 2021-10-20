@@ -13,9 +13,6 @@ function getPost() {
 
 function appendPosts(data) {
     data.allPosts.forEach(appendPost)
-    // console.log(data.allPosts)
-    console.log('reached');
-
 };
 
 // const dogData = {
@@ -39,6 +36,37 @@ function appendPost(data) {
 };
 
 btn.addEventListener('click', getPost); // try onClick
+
+const formBtn = document.querySelector('#submitForm')
+
+const titleBar = document.querySelector('#title')
+const nameBar = document.querySelector('#name')
+const messageBar = document.querySelector('#message')
+
+function submitPost(e) {
+    e.preventDefault();
+    console.log(e)
+    const postData = {
+        title: titleBar.value,
+        pseudonym: nameBar.value,
+        post_body: messageBar.value
+        // title: e.target.title.value,
+        // pseudonym: e.target.name.value,
+        // post_body: e.target.message.value
+    };
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(postData),
+        headers: { "Content-Type": "application/json" }
+    };
+    fetch('http://localhost:3000/posts', options)
+        .then(r => r.json())
+        .then(appendPost)
+        // .then(() => e.target.reset())
+        .catch(console.warn)
+};
+
+formBtn.addEventListener('click', submitPost)
 
 // Fetch all cats as soon as app is loaded
 // getAllDogs();
