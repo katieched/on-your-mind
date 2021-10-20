@@ -16,7 +16,6 @@ function appendPosts(data) {
 
 
 function appendPost(data) {
-    console.log(data.title)
     const section = document.querySelector('#displayPost')
     // const divPosts = document.querySelector('#displayPost')
     const newDiv = document.createElement('div')
@@ -45,7 +44,6 @@ const messageBar = document.querySelector('#message')
 
 function submitPost(e) {
     e.preventDefault();
-    console.log(e)
     const postData = {
         title: titleBar.value,
         pseudonym: nameBar.value,
