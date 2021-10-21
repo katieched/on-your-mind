@@ -1,0 +1,104 @@
+:root {
+    --light-grey: rgb(204 202 202);
+    --blue: #2d9fd9;
+    --canvas: #DAE0E6;
+  }
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--canvas);
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    width: 50%;
+    padding: 10px;
+}
+h4 {
+    font-style: italic;
+    margin: 0;
+}
+
+form {
+ 
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    width: 50%;
+    padding: 10px;
+}
+
+input[type="text" i] {
+    margin: 10px;
+    border: 1px solid var(--light-grey);
+    border-radius: 6px;
+    padding: 4px;
+}
+
+#submitForm {
+    width: 100%;
+}
+
+#thoughts {
+
+    margin-left: 260px;
+    width: 50%;
+    padding: 4px;
+}
+
+
+#submitForm, #thoughts {
+    padding: 4px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border-width: 0;
+    cursor: pointer; 
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    transition: all 200ms;  
+}
+
+#submitForm:hover, #thoughts:hover  {
+    background-color: #afacac;
+  }
+  
+  #submitForm span:after, #thoughts span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #submitForm:hover span, #thoughts:hover span {
+    padding-right: 25px;
+  }
+  
+  #submitForm:hover span:after, #thoughts:hover span:after {
+    opacity: 1;
+    right: 0;
+  } 
+
+div {
+    background-color: white;
+    border: 1px solid var(--light-grey);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 10px 250px;
+    width: 50%;
+    padding: 10px;
+}
+
+li {
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    position: relative;
+    list-style-type: none;
+    }
+         
